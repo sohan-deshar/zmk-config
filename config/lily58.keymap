@@ -35,15 +35,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
 // |   ~   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |  "|"  |
-// |       |     |     |      |  \   |  '   |                   |  +   |   -   |  =    |  {   |   }   |   "   |
-// |       |     |     |      |  |   |  "   |        |  |       |  :   |   _   |  <    |  >   |   ?   |  "|"  |
+// |       |     |     |  :   |  |   |  "   |                   |  +   |   -   |  =    |  {   |   }   |   "   |
+// |       |     |     |  ;   |  \   |  '   |        |  |       |  :   |   _   |  <    |  >   |   ?   |  "|"  |
 //                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
-&kp F1     &kp F2           &kp F3            &kp F4         	&kp F5       &kp F6                       &kp F7    &kp F8    	 &kp F9          &kp F10   &kp F11   &kp F12
-&kp TILDE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
-&trans 	   &trans		    &trans      	  &kp BSLH      	&kp SQT		 &trans		                  &kp KP_PLUS    &kp MINUS &kp EQUAL     &kp LBRC  &kp RBRC  &kp DQT
-&trans     &trans			&trans	 		  &kp PIPE			&kp DQT       &trans    &trans   &trans    &kp COLON    &kp UNDER    &kp LT       &kp GT  &kp QMARK  &kp PIPE
-                                              &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
+&kp F1     &kp F2       &kp F3      &kp F4      &kp F5      &kp F6                       &kp F7    		&kp F8    	 &kp F9          &kp F10   	&kp F11   	&kp F12
+&kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&kp PIPE
+&trans 	   &trans		&trans 		&kp COLON   &kp PIPE    &kp DQT		                 &kp KP_PLUS   	&kp MINUS 	 &kp EQUAL     	 &kp LBRC  	&kp RBRC  	&kp DQT
+&trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &trans   &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&kp PIPE
+                        			&trans      &trans      &trans     &trans   &trans   &trans    &trans    	&trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
