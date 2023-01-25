@@ -41,11 +41,13 @@
         combo_esc_jk {
             timeout-ms = <50>;
             key-positions = <31 32>;
+			layers = <0>;
             bindings = <&kp ESC>;
         };
         combo_esc_kj {
             timeout-ms = <50>;
             key-positions = <32 31>;
+			layers = <0>;
             bindings = <&kp ESC>;
         };
     };
@@ -93,13 +95,13 @@
 
 		raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |  DEL |       |       |PSCRN | HOME  |  END  |
+// |  PREV | P/P | NXT |VOL_DN| MUTE |VOL_UP|                   |  DEL |       |       |PSCRN | HOME  |  END  |
 // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   | PG_UP |
 // |       |     |     |      |      |      |                   |  <-  |   v   |   ^   |  ->  |   :   | PG_DN |
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |        |  |       |      |       |       |  [   |   ]   |   \   |
 //                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
-&trans	   &trans 			&trans 			  &trans  			&trans  	 &trans                     	  &kp DEL     &trans    &trans    &kp PSCRN   &kp HOME  &kp END
+&kp C_PREV &kp C_PP 		&kp C_NEXT 		  &kp C_VOL_DN		&kp C_MUTE   &kp C_VOL_UP                     	  &kp DEL     &trans    &trans    &kp PSCRN   &kp HOME  &kp END
 &kp GRAVE  &kp N1 			&kp N2 			  &kp N3  			&kp N4  	 &kp N5                       	  &kp N6      &kp N7    &kp N8    &kp N9   &kp N0    &kp PG_UP
 &trans	   &trans 			&trans 			  &trans  			&trans  	 &trans          				  &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &kp COLON 	&kp PG_DN
 &bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4  &trans   &trans    &trans    &trans	  &trans   &kp LBKT  &kp RBKT  	&kp BSLH
