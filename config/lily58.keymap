@@ -22,14 +22,16 @@
         };
     };
 };
-behaviors {
-	mo_kt: behavior_mo_kt {
-		compatible = "zmk,behavior-hold-tap";
-		label = "mo_kt";
-		#binding-cells = <2>;
-		flavor = "hold-preferred";
-		tapping-term-ms = <200>;
-		bindings = <&mo>, <&kt>;
+/{
+	behaviors {
+		mo_sk: behavior_mo_sk {
+			compatible = "zmk,behavior-hold-tap";
+			label = "mo_sk";
+			#binding-cells = <2>;
+			flavor = "hold-preferred";
+			tapping-term-ms = <200>;
+			bindings = <&mo>, <&sk>;
+		};
 	};
 };
 
@@ -49,7 +51,7 @@ behaviors {
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp BSLH
 &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B  &kp BSPC   &sk RALT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &kp LALT &kp LGUI &mo_kt 1 LSHFT  &kp SPACE  &kp SPACE  &lt 2 RET  &sk RSHFT  &kp RGUI
+                        &kp LALT &kp LGUI &mo_sk 1 LSHFT  &kp SPACE  &kp SPACE  &lt 2 RET  &sk RSHFT  &kp RGUI
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
