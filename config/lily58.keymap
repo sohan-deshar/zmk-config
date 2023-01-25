@@ -36,6 +36,22 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc_jk {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp ESC>;
+        };
+        combo_esc_kj {
+            timeout-ms = <50>;
+            key-positions = <32 31>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
+/ {
 	keymap {
 		compatible = "zmk,keymap";
 
