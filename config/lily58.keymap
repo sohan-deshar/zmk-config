@@ -8,20 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-/ {
-    macros {
-        super_bspc: super_bspc {
-            label = "Super_Backspace";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp BSPC>
-                , <&macro_release &kp LCTRL>
-                ;
-        };
-    };
-};
+
 /{
 	behaviors {
 		mo_sk: behavior_mo_sk {
@@ -35,17 +22,25 @@
 	};
 };
 
+//
+// |  0  1  2  3  4  5 |          |  6  7  8  9 10 11 |
+// | 12 13 14 15 16 17 |          | 18 19 20 21 22 23 |
+// | 24 25 26 27 28 29 |          | 30 31 32 33 34 35 |
+// | 36 37 38 39 40 41 42 |    | 43 44 45 46 47 48 49 |
+//          | 50 51 52 53 |    | 54 55 56 57 |
+//
+
 / {
     combos {
         compatible = "zmk,combos";
         combo_esc_jk {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <31 32>;
 			layers = <0>;
             bindings = <&kp ESC>;
         };
         combo_esc_kj {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <32 31>;
 			layers = <0>;
             bindings = <&kp ESC>;
@@ -62,14 +57,14 @@
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// |sLSHFT |  Z  |  X  |  C   |  V   |  B   |  BSPC  |  |  RALT |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | LALT | GUI  | v/LS |  SPACE |  | up/SP | RSHFT|  RET  | RGUI  |
+// | LSHFT |  Z  |  X  |  C   |  V   |  B   |  BSPC  |  | sRALT |  N   |  M    |  ,    |  .   |   /   | xxxxx |
+//                     | LALT | GUI  | v/LS |  xxxxx |  | SPACE |up/RET|sRCTRL |sRSHFT |
 			bindings = <
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp BSLH
 &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B  &kp BSPC   &sk RALT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &kp LALT &kp LGUI &mo_sk 1 LSHFT  &kp SPACE  &kp SPACE  &lt 2 RET  &sk RSHFT  &kp RGUI
+&kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B  &kp BSPC   &sk RALT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &none
+                        &kp LALT &kp LGUI &mo_sk 1 LSHFT  &none  &kp SPACE  &lt 2 RET  &sk RCTRL  &sk RSHFT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -80,14 +75,14 @@
 // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
 // |   ~   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |  "|"  |
 // |       |     |     |  :   |  |   |  "   |                   |  +   |   -   |  =    |  {   |   }   |   "   |
-// |       |     |     |  ;   |  \   |  '   |sup_bspc|  |       |  :   |   _   |  <    |  >   |   ?   |  "|"  |
-//                     |      |      |      |        |  |       |      |       |       |
+// |       |     |     |  ;   |  \   |  '   |LC(BSPC)|  |       |  :   |   _   |  <    |  >   |   ?   | xxxxx |
+//                     |      |      |      | xxxxxx |  |       |      |       |       |
 			bindings = <
 &kp F1     &kp F2       &kp F3      &kp F4      &kp F5      &kp F6                       &kp F7    		&kp F8    	 &kp F9          &kp F10   	&kp F11   	&kp F12
 &kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&kp PIPE
 &trans 	   &trans		&trans 		&kp COLON   &kp PIPE    &kp DQT		                 &kp KP_PLUS   	&kp MINUS 	 &kp EQUAL     	 &kp LBRC  	&kp RBRC  	&kp DQT
-&trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &super_bspc   &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&kp PIPE
-                        			&trans      &trans      &trans     &trans   &trans   &trans    &trans    	&trans
+&trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &kp LC(BSPC)      &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&none
+                        			&trans      &trans      &trans     &none   &trans    &trans    &trans    	&trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -98,14 +93,14 @@
 // |  PREV | P/P | NXT |VOL_DN| MUTE |VOL_UP|                   |  DEL |       |       |PSCRN | HOME  |  END  |
 // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   | PG_UP |
 // |       |     |     |      |      |      |                   |  <-  |   v   |   ^   |  ->  |   :   | PG_DN |
-// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |        |  |       |      |       |       |  [   |   ]   |   \   |
-//                     |      |      |      |        |  |       |      |       |       |
+// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |        |  |       |      |       |       |  [   |   ]   | xxxxx |
+//                     |      |      |      | xxxxxx |  |       |      |       |       |
 			bindings = <
 &kp C_PREV &kp C_PP 		&kp C_NEXT 		  &kp C_VOL_DN		&kp C_MUTE   &kp C_VOL_UP                     	  &kp DEL     &trans    &trans    &kp PSCRN   &kp HOME  &kp END
 &kp GRAVE  &kp N1 			&kp N2 			  &kp N3  			&kp N4  	 &kp N5                       	  &kp N6      &kp N7    &kp N8    &kp N9   &kp N0    &kp PG_UP
 &trans	   &trans 			&trans 			  &trans  			&trans  	 &trans          				  &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &kp COLON 	&kp PG_DN
-&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4  &trans   &trans    &trans    &trans	  &trans   &kp LBKT  &kp RBKT  	&kp BSLH
-                        					  &trans  			&trans 		 &trans    	   &trans   &trans    &trans    &trans    &trans
+&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4  &trans   &trans    &trans    &trans	  &trans   &kp LBKT  &kp RBKT  	&none
+                        					  &trans  			&trans 		 &trans    	   &none	&trans    &trans    &trans    &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
