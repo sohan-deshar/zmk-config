@@ -8,6 +8,20 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+/ {
+    macros {
+        super_bspc: super_bspc {
+            label = "Super_Backspace";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp BSPC>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
+};
 
 / {
 	keymap {
@@ -36,13 +50,13 @@
 // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
 // |   ~   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |  "|"  |
 // |       |     |     |  :   |  |   |  "   |                   |  +   |   -   |  =    |  {   |   }   |   "   |
-// |       |     |     |  ;   |  \   |  '   |        |  |       |  :   |   _   |  <    |  >   |   ?   |  "|"  |
+// |       |     |     |  ;   |  \   |  '   |sup_bspc|  |       |  :   |   _   |  <    |  >   |   ?   |  "|"  |
 //                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
 &kp F1     &kp F2       &kp F3      &kp F4      &kp F5      &kp F6                       &kp F7    		&kp F8    	 &kp F9          &kp F10   	&kp F11   	&kp F12
 &kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&kp PIPE
 &trans 	   &trans		&trans 		&kp COLON   &kp PIPE    &kp DQT		                 &kp KP_PLUS   	&kp MINUS 	 &kp EQUAL     	 &kp LBRC  	&kp RBRC  	&kp DQT
-&trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &trans   &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&kp PIPE
+&trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &super_bspc   &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&kp PIPE
                         			&trans      &trans      &trans     &trans   &trans   &trans    &trans    	&trans
 			>;
 
