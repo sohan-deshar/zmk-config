@@ -58,13 +58,13 @@
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | LSHFT |  Z  |  X  |  C   |  V   |  B   |  BSPC  |  | sRALT |  N   |  M    |  ,    |  .   |   /   | xxxxx |
-//                     | LALT | GUI  | LS/v |  xxxxx |  | SPACE |up/RET|sRCTRL |sRSHFT |
+//                     | LALT | GUI  |  LOW |  xxxxx |  | SPACE |up/RET| RSHFT | RCTRL |
 			bindings = <
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp BSLH
 &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B  &kp BSPC   &sk RALT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &none
-                        &kp LALT &kp LGUI &kp_to LSHFT 1 &none  &kp SPACE  &lt 2 RET  &sk RCTRL  &sk RSHFT
+                        &kp LALT &kp LGUI &mo 1 &none  &kp SPACE  &lt 2 RET  &kp RSHFT  &kp RCTRL 
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -82,7 +82,7 @@
 &kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&kp PIPE
 &trans 	   &trans		&trans 		&kp COLON   &kp PIPE    &kp DQT		                 &kp KP_PLUS   	&kp MINUS 	 &kp EQUAL     	 &kp LBRC  	&kp RBRC  	&kp DQT
 &trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &kp LC(BSPC)      &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&none
-                        			&trans      &trans      &to 0     &none   &trans    &trans    &trans    	&trans
+                        			&trans      &trans      &trans     &none   &trans    &trans    &trans    	&trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
