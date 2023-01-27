@@ -82,7 +82,7 @@
 &kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&kp PIPE
 &trans 	   &trans		&trans 		&kp COLON   &kp PIPE    &kp DQT		                 &kp KP_PLUS   	&kp MINUS 	 &kp EQUAL     	 &kp LBRC  	&kp RBRC  	&kp DQT
 &trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &kp LC(BSPC)      &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&none
-                        			&trans      &trans      &trans     &none   &trans    &trans    &trans    	&trans
+                        			&trans      &trans      &to 0     &none   &trans    &trans    &trans    	&trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
