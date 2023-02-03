@@ -35,9 +35,9 @@
             tapping-term-ms = <100>;
             bindings = <&kp LBRC>, <&kp LBKT>;
         };
-		td_rbrc_rbkt: tap_dance_0 {
+		td_rbrc_rbkt: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "LEFT_BRACE_BRACKET";
+            label = "RIGHT_BRACE_BRACKET";
             #binding-cells = <0>;
             tapping-term-ms = <100>;
             bindings = <&kp RBRC>, <&kp RBKT>;
