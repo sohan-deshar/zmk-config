@@ -12,7 +12,7 @@
 
 /{
 	behaviors {
-		ht: hold-tap {
+		ht: hold_tap {
 			compatible = "zmk,behavior-hold-tap";
 			label = "hold-tap";
 			#binding-cells = <2>;
@@ -20,7 +20,7 @@
 			tapping-term-ms = <200>;
 			bindings = <&kp>, <&kp>;
 		};
-		mo_sk: momentary-sticky{
+		mo_sk: momentary_sticky{
 			compatible = "zmk,behavior-hold-tap";
 			label = "momentary-sticky";
 			#binding-cells = <2>;
@@ -28,6 +28,20 @@
 			tapping-term-ms = <200>;
 			bindings = <&mo>, <&sk>;
 		};
+		td_lbrc_lbkt: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LEFT_BRACE_BRACKET";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp LBRC>, <&kp LBKT>;
+        };
+		td_rbrc_rbkt: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LEFT_BRACE_BRACKET";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp RBRC>, <&kp RBKT>;
+        };
 	};
 };
 
@@ -83,13 +97,13 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
 // |   ~   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |  "|"  |
-// |       |     |     |  :   |  |   |  "   |                   |  +   |   -   |  =    |  {   |   }   |   "   |
+// |       |     |     |  :   |  |   |  "   |                   |  +   |   -   |  =    | {,[  |  },]  |   "   |
 // |       |     |     |  ;   |  \   |  '   |LC(SHFT)|  |       |  :   |   _   |  <    |  >   |   ?   | xxxxx |
 //                     |      |      |      |        |  |       | LYR3 |       |       |
 			bindings = <
 &kp F1     &kp F2       &kp F3      &kp F4      &kp F5      &kp F6                       &kp F7    		&kp F8    	 &kp F9          &kp F10   	&kp F11   	&kp F12
 &kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&kp PIPE
-&trans 	   &trans		&trans 		&kp COLON   &kp PIPE    &kp DQT		                 &kp KP_PLUS   	&kp MINUS 	 &kp EQUAL     	 &kp LBRC  	&kp RBRC  	&kp DQT
+&trans 	   &trans		&trans 		&kp COLON   &kp PIPE    &kp DQT		                 &kp KP_PLUS   	&kp MINUS 	 &kp EQUAL     	 &td_lbrc_lbkt  	&td_rbrc_rbkt  	&kp DQT
 &trans     &trans		&trans		&kp SEMI	&kp BSLH	&kp SQT    &kp LC(BSPC)   &trans   &kp COLON    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&none
                         			&trans      &trans      &trans     &trans   &trans    &mo 3		&trans    	&trans
 			>;
@@ -102,13 +116,13 @@
 // |  PREV | P/P | NXT |VOL_DN| MUTE |VOL_UP|                   |  DEL |       |       |PSCRN | HOME  |  END  |
 // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   | PG_UP |
 // |       |     |     |      |      |      |                   |  <-  |   v   |   ^   |  ->  |   :   | PG_DN |
-// |       |     |     |      |      |      |        |  |       |      |       |       |  [   |   ]   | xxxxx |
+// |       |     |     |      |      |      |        |  |       |      |       |       |      |       | xxxxx |
 //                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
 &kp C_PREV &kp C_PP &kp C_NEXT	&kp C_VOL_DN	&kp C_MUTE  &kp C_VOL_UP				&kp DEL     &trans    &trans    &kp PSCRN   &kp HOME  &kp END
 &kp GRAVE  &kp N1 	&kp N2 		&kp N3  		&kp N4  	&kp N5						&kp N6      &kp N7    &kp N8    &kp N9   &kp N0    &kp PG_UP
 &trans	   &trans 	&trans 		&trans  		&trans  	&trans          			&kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &kp COLON 	&kp PG_DN
-&trans     &trans	&trans      &trans      	&trans 		&trans  &trans   &trans		&trans	&trans	  &trans   &kp LBKT  &kp RBKT  	&none
+&trans     &trans	&trans      &trans      	&trans 		&trans  &trans   &trans		&trans	&trans	  &trans   &trans  &trans  	&none
                         		&trans  		&trans 		&trans  &trans	 &trans		&trans	&trans    &trans
 			>;
 
