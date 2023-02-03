@@ -32,42 +32,42 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LEFT_BRACE_BRACKET";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             bindings = <&kp LBRC>, <&kp LBKT>;
         };
 		td_rbrc_rbkt_cln: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             label = "RIGHT_BRACE_BRACKET";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             bindings = <&kp RBRC>, <&kp RBKT>, <&kp COLON>;
         };
 		td_bslh_pipe: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             label = "BSLH_PIPE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             bindings = <&kp BSLH>, <&kp PIPE>;
         };
 		td_sqt_dqt: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
             label = "SQT_DQT";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             bindings = <&kp SQT>, <&kp DQT>;
         };
 		td_eq_plus: tap_dance_4 {
             compatible = "zmk,behavior-tap-dance";
             label = "EQUAL_PLUS";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <175>;
             bindings = <&kp EQUAL>, <&kp KP_PLUS>;
         };
 		td_bt_td: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
             label = "GRAVE_TILDE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <175>;
             bindings = <&kp GRAVE>, <&kp TILDE>;
         };
 	};
@@ -131,7 +131,7 @@
 			bindings = <
 &kp F1     &kp F2       &kp F3      &kp F4      &kp F5      &kp F6                       &kp F7    		&kp F8    	 &kp F9          &kp F10   	&kp F11   	&kp F12
 &kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&kp PIPE
-&trans 	   &trans		&trans 		&trans      &td_bslh_pipe      &td_bslh_pipe         &trans   	&kp MINUS 	&td_eq_plus     	 &td_lbrc_lbkt  	&td_rbrc_rbkt_cln  	&kp DQT
+&trans 	   &trans		&trans 		&trans      &td_bslh_pipe      &td_bt_td         &trans   	&kp MINUS 	&td_eq_plus     	 &td_lbrc_lbkt  	&td_rbrc_rbkt_cln  	&kp DQT
 &trans     &trans		&trans		&trans	    &td_sqt_dqt &trans &kp LC(BSPC) &trans   &trans    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&none
                         			&trans      &trans      &trans     &trans   &trans   &mo 3		&trans    	&trans
 			>;
