@@ -12,14 +12,6 @@
 
 /{
 	behaviors {
-		ht: hold_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "hold-tap";
-			#binding-cells = <2>;
-			flavor = "hold-preferred";
-			tapping-term-ms = <200>;
-			bindings = <&kp>, <&kp>;
-		};
 		mo_sk: momentary_sticky{
 			compatible = "zmk,behavior-hold-tap";
 			label = "momentary-sticky";
@@ -117,7 +109,7 @@
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | LSHFT |  Z  |  X  |  C   |  V   |  B   |  BSPC  |  | sRALT |  N   |  M    |  ,    |  .   |   /   | xxxxx |
-//                     | LALT | GUI  |LOWER |  RET   |  | SPACE |  UP  | RSHFT | RCTRL |
+//                     | LALT | GUI  |LOWER |  RET   |  |SHFT/SP|  UP  | RSHFT | RCTRL |
 			bindings = <
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp BSLH
