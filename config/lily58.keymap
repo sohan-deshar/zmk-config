@@ -118,13 +118,13 @@
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | LSHFT |  Z  |  X  |  C   |  V   |  B   |  BSPC  |  | sRALT |  N   |  M    |  ,    |  .   |   /   | xxxxx |
+// | LSHFT |  Z  |  X  |  C   |  V   |  B   |        |  | sRALT |  N   |  M    |  ,    |  .   |   /   | xxxxx |
 //                     | LALT | GUI  |LOWER |  RET   |  |SHFT/SP|  UP  | BSPC  | RCTRL |
 			bindings = <
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp BSLH
 &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B  &kp BSPC   &sk RALT &kp N  &kp M    &kp COMMA &kp DOT &gqt RALT FSLH &none
+&kp LSHFT &gqt LALT Z  &kp X  &kp C    &kp V    &kp B  &none   &sk RALT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &none
                         &kp LALT &kp LGUI &mo 1  &kp RET  &gqt LSHFT SPACE  &mo 2  &kp BSPC  &kp RCTRL 
 			>;
 
@@ -142,7 +142,7 @@
 &kp F1     &kp F2       &kp F3      &kp F4      &kp F5      &kp F6                       &kp F7    		&kp F8    	 &kp F9          &kp F10   	&kp F11   	&kp F12
 &kp TILDE  &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT                    &kp CARET 		&kp AMPS  	 &kp KP_MULTIPLY &kp LPAR  	&kp RPAR  	&trans
 &trans 	   &trans		&trans 		&trans      &td_dqt_sqt      &td_bt_td         &trans   	&kp MINUS 	&td_eq_plus     	 &td_lbrc_lbkt  	&td_rbrc_rbkt_cln  	&trans
-&trans     &trans		&trans		&trans	    &trans &td_bslh_pipe &trans &trans   &trans    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&none
+&trans     &trans		&trans		&trans	    &trans &td_bslh_pipe &none &trans   &trans    	&kp UNDER    &kp LT       	 &kp GT  	&kp QMARK  	&none
                         			&trans      &trans      &trans     &trans   &trans   &mo 3		&kp LC(BSPC)    	&trans
 			>;
 
